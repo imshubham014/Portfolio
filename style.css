@@ -87,13 +87,6 @@ body.light header{
     color:var(--main);
 }
 
-.theme-btn,
-.menu-btn{
-    color:var(--text);
-    font-size:24px;
-    cursor:pointer;
-}
-
 .menu-btn{
     display:none;
 }
@@ -428,6 +421,58 @@ section{
 
 .project h3{
     padding:20px;
+}
+
+/*==============================
+  Certificates
+==============================*/
+
+.certificates{
+    padding:100px 10%;
+    text-align:center;
+}
+
+.certificate-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+    margin-top:40px;
+}
+
+.certificate-card{
+    background:var(--card);
+    padding:30px 25px;
+    border-radius:18px;
+    text-align:center;
+    box-shadow:var(--shadow);
+    border:2px solid transparent;
+    transition:0.4s ease;
+}
+
+.certificate-card:hover{
+    transform:translateY(-10px);
+    border-color:var(--main);
+    box-shadow:0 10px 25px rgba(0,188,212,0.35);
+}
+
+.certificate-card h3{
+    font-size:22px;
+    color:var(--text);
+    margin-bottom:12px;
+}
+
+.certificate-card p{
+    color:var(--light);
+    margin-bottom:20px;
+}
+
+/* Small View Certificate Button */
+.certificate-card .btn{
+    display:inline-block;
+    padding:8px 18px;      /* Reduced size */
+    font-size:14px;        /* Smaller text */
+    border-radius:30px;
+    margin:0;
 }
 
 /*==============================

@@ -4,102 +4,73 @@
 const menuBtn = document.querySelector(".menu-btn");
 const navLinks = document.querySelector(".nav-links");
 
-menuBtn.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-
-    const icon = menuBtn.querySelector("i");
-
-    if (navLinks.classList.contains("active")) {
-        icon.classList.remove("fa-bars");
-        icon.classList.add("fa-times");
-    } else {
-        icon.classList.remove("fa-times");
-        icon.classList.add("fa-bars");
-    }
-});
-
-// Close menu when clicking a link
-document.querySelectorAll(".nav-links a").forEach(link => {
-    link.addEventListener("click", () => {
-        navLinks.classList.remove("active");
+if (menuBtn && navLinks) {
+    menuBtn.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
 
         const icon = menuBtn.querySelector("i");
-        icon.classList.remove("fa-times");
-        icon.classList.add("fa-bars");
+
+        if (icon) {
+            if (navLinks.classList.contains("active")) {
+                icon.classList.replace("fa-bars", "fa-times");
+            } else {
+                icon.classList.replace("fa-times", "fa-bars");
+            }
+        }
     });
-});
 
-// ===============================
-// Dark / Light Theme Toggle
-// ===============================
-const themeBtn = document.querySelector(".theme-btn");
-const themeIcon = themeBtn.querySelector("i");
+    document.querySelectorAll(".nav-links a").forEach(link => {
+        link.addEventListener("click", () => {
+            navLinks.classList.remove("active");
 
-// Load saved theme
-if (localStorage.getItem("theme") === "light") {
-    document.body.classList.add("light");
-    themeIcon.classList.remove("fa-moon");
-    themeIcon.classList.add("fa-sun");
+            const icon = menuBtn.querySelector("i");
+            if (icon) {
+                icon.classList.replace("fa-times", "fa-bars");
+            }
+        });
+    });
 }
-
-themeBtn.addEventListener("click", () => {
-    document.body.classList.toggle("light");
-
-    if (document.body.classList.contains("light")) {
-        themeIcon.classList.remove("fa-moon");
-        themeIcon.classList.add("fa-sun");
-        localStorage.setItem("theme", "light");
-    } else {
-        themeIcon.classList.remove("fa-sun");
-        themeIcon.classList.add("fa-moon");
-        localStorage.setItem("theme", "dark");
-    }
-});
 
 // ===============================
 // Typing Animation
 // ===============================
 const typing = document.querySelector(".typing");
 
-const words = [
-    "Frontend Developer",
-    "Backend Developer",
-];
+if (typing) {
+    const words = [
+        "Creative Web Developer",
+    ];
 
-let wordIndex = 0;
-let charIndex = 0;
-let deleting = false;
+    let wordIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
 
-function typeEffect() {
+    function typeEffect() {
+        const currentWord = words[wordIndex];
 
-    const currentWord = words[wordIndex];
-
-    if (!deleting) {
-        typing.textContent = currentWord.substring(0, charIndex++);
-    } else {
-        typing.textContent = currentWord.substring(0, charIndex--);
-    }
-
-    let speed = deleting ? 70 : 120;
-
-    if (!deleting && charIndex === currentWord.length + 1) {
-        deleting = true;
-        speed = 1500;
-    }
-
-    if (deleting && charIndex === 0) {
-        deleting = false;
-        wordIndex++;
-
-        if (wordIndex >= words.length) {
-            wordIndex = 0;
+        if (!deleting) {
+            typing.textContent = currentWord.substring(0, charIndex++);
+        } else {
+            typing.textContent = currentWord.substring(0, charIndex--);
         }
+
+        let speed = deleting ? 70 : 120;
+
+        if (!deleting && charIndex === currentWord.length + 1) {
+            deleting = true;
+            speed = 1500;
+        }
+
+        if (deleting && charIndex === 0) {
+            deleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+        }
+
+        setTimeout(typeEffect, speed);
     }
 
-    setTimeout(typeEffect, speed);
+    typeEffect();
 }
-
-typeEffect();
 
 // ===============================
 // Scroll Reveal Animation
@@ -107,19 +78,15 @@ typeEffect();
 const sections = document.querySelectorAll("section");
 
 function revealSections() {
-
     const trigger = window.innerHeight * 0.85;
 
     sections.forEach(section => {
-
         const top = section.getBoundingClientRect().top;
 
         if (top < trigger) {
             section.classList.add("show");
         }
-
     });
-
 }
 
 window.addEventListener("scroll", revealSections);
@@ -135,96 +102,90 @@ window.addEventListener("scroll", () => {
     let current = "";
 
     sections.forEach(section => {
-
         const sectionTop = section.offsetTop - 120;
 
-        if (pageYOffset >= sectionTop) {
-            current = section.getAttribute("id");
+        if (window.scrollY >= sectionTop) {
+            current = section.id;
         }
-
     });
 
     navItems.forEach(link => {
-
         link.classList.remove("active");
 
         if (link.getAttribute("href") === "#" + current) {
             link.classList.add("active");
         }
-
     });
-
 });
 
 // ===============================
 // Smooth Scroll
 // ===============================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-
     anchor.addEventListener("click", function (e) {
 
-        e.preventDefault();
+        const target = document.querySelector(this.getAttribute("href"));
 
-        document.querySelector(this.getAttribute("href")).scrollIntoView({
-            behavior: "smooth"
-        });
+        if (target) {
+            e.preventDefault();
 
+            target.scrollIntoView({
+                behavior: "smooth"
+            });
+        }
     });
-
 });
 
 // ===============================
-// Navbar Shadow on Scroll
+// Navbar Shadow
 // ===============================
 const header = document.querySelector("header");
 
-window.addEventListener("scroll", () => {
-
-    if (window.scrollY > 50) {
-        header.style.boxShadow = "0 5px 20px rgba(0,0,0,0.3)";
-    } else {
-        header.style.boxShadow = "none";
-    }
-
-});
+if (header) {
+    window.addEventListener("scroll", () => {
+        header.style.boxShadow =
+            window.scrollY > 50
+                ? "0 5px 20px rgba(0,0,0,0.3)"
+                : "none";
+    });
+}
 
 // ===============================
 // Contact Form Validation
 // ===============================
 const form = document.querySelector("form");
 
-form.addEventListener("submit", function(e){
+if (form) {
+    form.addEventListener("submit", function (e) {
 
-    e.preventDefault();
+        e.preventDefault();
 
-    const inputs = form.querySelectorAll("input, textarea");
+        const inputs = form.querySelectorAll("input, textarea");
+        let valid = true;
 
-    let valid = true;
+        inputs.forEach(input => {
 
-    inputs.forEach(input => {
+            if (input.value.trim() === "") {
+                valid = false;
+                input.style.border = "2px solid red";
+            } else {
+                input.style.border = "2px solid #00bcd4";
+            }
 
-        if(input.value.trim() === ""){
-            valid = false;
-            input.style.border = "2px solid red";
-        }else{
-            input.style.border = "2px solid #00bcd4";
-        }
-
-    });
-
-    if(valid){
-
-        alert("Message Sent Successfully!");
-
-        form.reset();
-
-        inputs.forEach(input=>{
-            input.style.border="none";
         });
 
-    }
+        if (valid) {
 
-});
+            alert("Message Sent Successfully!");
+
+            form.reset();
+
+            inputs.forEach(input => {
+                input.style.border = "";
+            });
+        }
+    });
+}
 
 // ===============================
 // Scroll To Top Button
@@ -232,6 +193,7 @@ form.addEventListener("submit", function(e){
 const topBtn = document.createElement("button");
 
 topBtn.innerHTML = "↑";
+topBtn.className = "scroll-top-btn";
 
 topBtn.style.position = "fixed";
 topBtn.style.bottom = "30px";
@@ -250,20 +212,12 @@ topBtn.style.zIndex = "1000";
 document.body.appendChild(topBtn);
 
 window.addEventListener("scroll", () => {
-
-    if(window.scrollY > 300){
-        topBtn.style.display = "block";
-    }else{
-        topBtn.style.display = "none";
-    }
-
+    topBtn.style.display = window.scrollY > 300 ? "block" : "none";
 });
 
 topBtn.addEventListener("click", () => {
-
     window.scrollTo({
-        top:0,
-        behavior:"smooth"
+        top: 0,
+        behavior: "smooth"
     });
-
 });

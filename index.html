@@ -1,272 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Shubham Pandey | Portfolio</title>
+    <title>Shubham Pandey | Portfolio</title>
 
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 
-<link
-rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body>
 
-<!-- Navigation -->
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar">
 
-<header>
+            <div class="logo">
+                Portfolio
+            </div>
 
-<nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#certificates">Certificates</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
 
-<div class="logo">
-Portfolio
-</div>
+               <button class="menu-btn" aria-label="Open Menu">
+               <i class="fa-solid fa-bars"></i>
+           </button>
 
-<ul class="nav-links">
+        </nav>
+    </header>
 
-<li><a href="#home">Home</a></li>
+    <!-- Hero Section -->
+    <section class="home" id="home">
 
-<li><a href="#about">About</a></li>
+        <div class="home-text">
 
-<li><a href="#skills">Skills</a></li>
+            <h3>Hello, I'm</h3>
 
-<li><a href="projects">Projects</a></li>
+            <h1>Shubham Pandey</h1>
 
-<li><a href="Certificates">Certificates</a></li>
-
-<li><a href="#contact">Contact</a></li>
-
-</ul>
-
-<div class="theme-btn">
-<i class="fa-solid fa-moon"></i>
-</div>
-
-<div class="menu-btn">
-<i class="fa-solid fa-bars"></i>
-</div>
-
-</nav>
-
-</header>
-
-<!-- Hero -->
-
-<section class="home" id="home">
-
-    <!-- Left Side -->
-    <div class="home-text">
-
-        <h3>Hello, I'm</h3>
-
-        
-
-        <h2>I am a <span class="typing"></span></h2>
-
-        <p>
-            Creative Frontend Developer passionate about building modern websites.
-        </p>
-
-        <div class="buttons">
-            <a href="#" class="btn">Download CV</a>
-            <a href="#contact" class="btn btn2">Hire Me</a>
-        </div>
-
-        <div class="social">
-
-            <a href="https://www.linkedin.com/in/shubhampandey0114/" target="_blank">
-                <i class="fab fa-linkedin"></i>
-            </a>
-
-            <a href="https://github.com/imshubham014" target="_blank">
-                <i class="fab fa-github"></i>
-            </a>
-
-            <a href="https://www.instagram.com/imshubham_014?igsh=NXFtMDI3ZTR5ZGw5" target="_blank">
-                <i class="fab fa-instagram"></i>
-            </a>
-
-        </div>
-
-    </div>
-
-    <!-- Right Side -->
-    <div class="home-img">
-        <img src="images/profile.jpg" alt="Shubham Pandey">
-    </div>
-
-</section>
-
-
-<!-- About -->
-
-<section class="about" id="about">
-
-    <h2 class="title">About Me</h2>
-
-    <div class="about-container">
-
-        <div class="about-content">
+            <h2>I am a <span class="typing"></span></h2>
 
             <p>
-                Hi, I'm Shubham Pandey, a passionate Web Developer and programming enthusiast who enjoys building modern, responsive, and user-friendly websites. I have a strong foundation in HTML, CSS, JavaScript, Node.js, MySQL, Java, Python, and Data Structures & Algorithms (DSA). I love turning creative ideas into functional web applications while writing clean, efficient, and maintainable code. I am constantly learning new technologies, improving my problem-solving skills, and challenging myself with real-world projects. My goal is to grow as a Full-Stack Developer and create innovative digital solutions that deliver seamless user experiences and make a meaningful impact.
+               Creative Web Developer passionate about crafting modern, responsive, and visually engaging websites. I transform ideas into seamless digital experiences through clean code, intuitive user interfaces, and interactive designs that deliver exceptional performance across all devices.
+
             </p>
 
+            <div class="buttons">
+                <a href="resume/Shubham_Pandey_Resume.pdf" class="btn" download>
+                Download CV
+           </a>
+                <a href="#contact" class="btn btn2">Hire Me</a>
+            </div>
+
+            <div class="social">
+
+                <a href="https://www.linkedin.com/in/shubhampandey0114/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+
+                <a href="https://github.com/imshubham014"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+
+                <a href="https://www.instagram.com/imshubham_014?igsh=NXFtMDI3ZTR5ZGw5"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="home-img">
+            <img src="images/profile.jpg" alt="Shubham Pandey">
+        </div>
+
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+
+        <h2 class="title">About Me</h2>
+
+        <div class="about-container">
+
+            <div class="about-content">
+
+                <p>
+                    Hi, I'm Shubham Pandey, a passionate Web Developer and programming
+                    enthusiast who enjoys building modern, responsive, and
+                    user-friendly websites. I have a strong foundation in HTML, CSS,
+                    JavaScript, React.js, Node.js, MySQL, Java, Python, and Data
+                    Structures & Algorithms (DSA). I enjoy transforming creative
+                    ideas into functional web applications by writing clean,
+                    efficient, and maintainable code. I continuously learn new
+                    technologies, improve my problem-solving skills, and work on
+                    real-world projects. My goal is to become a skilled Full-Stack
+                    Developer and build innovative digital solutions that provide
+                    exceptional user experiences.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Skills -->
+    <section class="skills" id="skills">
+
+        <h2 class="title">My Skills</h2>
+
+        <div class="skills-container">
+
+            <div class="skill-card">
+                <i class="fab fa-html5"></i>
+                <h3>HTML</h3>
+            </div>
+
+            <div class="skill-card">
+                <i class="fab fa-css3-alt"></i>
+                <h3>CSS</h3>
+            </div>
+
+            <div class="skill-card">
+                <i class="fab fa-js-square"></i>
+                <h3>JavaScript</h3>
+            </div>
+
+            <div class="skill-card">
+                <i class="fab fa-python"></i>
+                <h3>Python</h3>
+            </div>
+
+           <div class="skill-card">
+                <i class="fas fa-sitemap"></i>
+                <h3>DSA</h3>
+           </div>
+
+            <div class="skill-card">
+                <i class="fas fa-database"></i>
+                <h3>SQL</h3>
+            </div>
+
+            <div class="skill-card">
+                <i class="fab fa-react"></i>
+                <h3>React.js</h3>
+            </div>
+
+            <div class="skill-card">
+                <i class="fab fa-node-js"></i>
+                <h3>Node.js</h3>
+            </div>
+
+            <div class="skill-card">
+                <i class="fas fa-code"></i>
+                <h3>C / C++</h3>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Projects -->
+    <section class="projects" id="projects">
+
+        <h2 class="title">Projects</h2>
+
+        <div class="project-container">
+
+            <div class="project">
+                <h3>Multiple Table Generator</h3>
+            </div>
+
+            <div class="project">
+                <h3>Expense Tracker</h3>
+            </div>
+
+            <div class="project">
+                <h3>ATM Machine</h3>
+            </div>
+
+            <div class="project">
+                <h3>QR Code Generator</h3>
+            </div>
+
+            <div class="project">
+                <h3>Clone Website</h3>
+            </div>
+
+            <div class="project">
+                <h3>Student Record System</h3>
+            </div>
+
+            <div class="project">
+                <h3>Snake Game</h3>
+            </div>
+
+            <div class="project">
+                <h3>Currency Converter</h3>
+            </div>
+
+            <div class="project">
+                <h3>Digital Clock</h3>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Certificates -->
+<section class="certificates" id="certificates">
+
+    <h2 class="title">Certificates</h2>
+
+    <div class="certificate-container">
+
+        <div class="certificate-card">
+            <h3>Programming Fundamentals using Python</h3>
+            <p>Infosys Springboard</p>
+            <a href="https://infyspringboard.onwingspan.com/public-assets/infosysheadstart/cert/lex_auth_0125409616243425281061_shared/a41c858e-f0a8-4a27-9556-55d1f1a4c5c2.pdf"
+               target="_blank"
+               class="btn">
+                View Certificate
+            </a>
+        </div>
+
+        <div class="certificate-card">
+            <h3>Java Programming Fundamentals</h3>
+            <p>Infosys Springboard</p>
+            <a href="https://infyspringboard.onwingspan.com/public-assets/infosysheadstart/cert/lex_29959473947367270000_shared/2ad90339-e74b-4c64-aa70-84c977396b62.pdf"
+               target="_blank"
+               class="btn">
+                View Certificate
+            </a>
         </div>
 
     </div>
 
 </section>
 
-<!-- Skills -->
-
-<section class="skills" id="skills">
-
-    <h2 class="title">My Skills</h2>
-
-    <div class="skills-container">
-
-        <div class="skill-card">
-            <i class="fab fa-html5"></i>
-            <h3>HTML</h3>
-        </div>
-
-        <div class="skill-card">
-            <i class="fab fa-css3-alt"></i>
-            <h3>CSS</h3>
-        </div>
-
-        <div class="skill-card">
-            <i class="fab fa-js-square"></i>
-            <h3>JavaScript</h3>
-        </div>
-
-        <div class="skill-card">
-            <i class="fab fa-python"></i>
-            <h3>Python</h3>
-        </div>
-
-        <div class="skill-card">
-           <i class="fas fa-project-diagram"></i>
-           <h3>DSA</h3>
-         </div>
-
-        <div class="skill-card">
-            <i class="fas fa-database"></i>
-            <h3>SQL</h3>
-        </div>
-
-        <div class="skill-card">
-            <i class="fab fa-react"></i>
-            <h3>React.js</h3>
-        </div>
-
-        <div class="skill-card">
-            <i class="fab fa-node-js"></i>
-            <h3>Node.js</h3>
-        </div>
-
-        <div class="skill-card">
-            <i class="fas fa-code"></i>
-            <h3>C/c++</h3>
-        </div>
-
-    </div>
-
 </section>
 
-<!-- Projects -->
+    <!-- Contact -->
+    <section class="contact" id="contact">
 
-<section class="projects" id="projects">
+        <h2 class="title">Contact Me</h2>
 
-<h2 class="title">Projects</h2>
+        <form action="#" method="post">
 
-<div class="project-container">
+            <input type="text" placeholder="Your Name" required>
 
-<div class="project">
+            <input type="email" placeholder="Email Address" required>
 
-<h3>Multiple Table Generator</h3>
+            <textarea placeholder="Your Message" rows="6" required></textarea>
 
-</div>
+            <button type="submit" class="btn">
+                Send Message
+            </button>
 
-<div class="project">
+        </form>
 
+    </section>
 
-<h3>Expense Tracker</h3>
+    <!-- Footer -->
+   <footer>
+    <p>&copy; 2026 Shubham Pandey | All Rights Reserved</p>
+    </footer>
 
-</div>
-
-<div class="project">
-
-<h3>ATm Machine</h3>
-
-</div>
-
-<div class="project">
-
-<h3>QR Code Generator</h3>
-
-</div>
-
-<div class="project">
-
-<h3>Clone Website</h3>
-
-</div>
-
-<div class="project">
-
-<h3>Student Record System</h3>
-
-</div>
-
-<div class="project">
-
-<h3>Snake Game</h3>
-
-</div>
-
-<div class="project">
-
-<h3>Currency Convertor</h3>
-
-</div>
-
-
-</div>
-
-</section>
-
-<!-- Contact -->
-
-<section class="contact" id="contact">
-
-<h2 class="title">Contact Me</h2>
-
-<form>
-
-<input type="text" placeholder="Your Name">
-
-<input type="email" placeholder="Email">
-
-<textarea placeholder="Message"></textarea>
-
-<button class="btn">Send Message</button>
-
-</form>
-
-</section>
-
-<footer>
-
-<p>© 2026 Shubham Pandey | All Rights Reserved</p>
-
-</footer>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
+
 </html>
